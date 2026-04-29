@@ -1,0 +1,271 @@
+.ai-assistant-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.ai-assistant-card h3 {
+  margin: 0 0 1.5rem 0;
+  color: #1f2937;
+  font-size: 1.1rem;
+}
+
+.ai-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.ai-form textarea {
+  padding: 0.75rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+  transition: all 0.2s;
+}
+
+.ai-form textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.ai-form textarea:disabled {
+  background: #f9fafb;
+  cursor: not-allowed;
+  color: #9ca3af;
+}
+
+.char-count {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-align: right;
+}
+
+.ai-form .btn {
+  width: 100%;
+  padding: 0.875rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transition: all 0.2s;
+}
+
+.ai-form .btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.ai-form .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner-mini {
+  display: inline-block;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.ai-result {
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  position: relative;
+  animation: slideIn 0.3s ease-out;
+  border-left: 4px solid;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-general {
+  background: #dbeafe;
+  border-left-color: #667eea;
+}
+
+.result-warning {
+  background: #fef3c7;
+  border-left-color: #f59e0b;
+}
+
+.result-tip {
+  background: #dcfce7;
+  border-left-color: #22c55e;
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.result-icon {
+  font-size: 1.5rem;
+}
+
+.result-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #1f2937;
+}
+
+.result-suggestion {
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.action-steps {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.action-steps h5 {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.95rem;
+  color: #1f2937;
+}
+
+.action-steps ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.action-steps li {
+  margin: 0.5rem 0;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.close-result {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #9ca3af;
+  transition: color 0.2s;
+  padding: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-result:hover {
+  color: #1f2937;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .ai-assistant-card {
+    padding: 1.25rem;
+  }
+
+  .ai-form textarea {
+    font-size: 16px;
+    min-height: 100px;
+    padding: 0.75rem;
+  }
+
+  .ai-form .btn {
+    min-height: 48px;
+    font-size: 1rem;
+  }
+
+  .ai-result {
+    padding: 1rem;
+    border-radius: 0.75rem;
+  }
+
+  .result-header {
+    gap: 0.5rem;
+  }
+
+  .close-result {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-assistant-card {
+    padding: 1rem;
+  }
+
+  .ai-assistant-card h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .ai-form textarea {
+    min-height: 80px;
+    font-size: 16px;
+  }
+
+  .ai-result {
+    padding: 0.875rem;
+  }
+
+  .result-icon {
+    font-size: 1.25rem;
+  }
+
+  .result-header h4 {
+    font-size: 0.95rem;
+  }
+
+  .result-suggestion {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .action-steps {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+  }
+
+  .action-steps h5 {
+    font-size: 0.9rem;
+  }
+
+  .action-steps li {
+    font-size: 0.85rem;
+  }
+
+  .close-result {
+    width: 1.25rem;
+    height: 1.25rem;
+    font-size: 1rem;
+  }
+}

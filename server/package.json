@@ -1,0 +1,24 @@
+{
+  "name": "health-ai-backend",
+  "version": "1.0.0",
+  "description": "Health AI MVP - Express Backend with Google Gemini",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.0",
+    "dotenv": "^16.0.3",
+    "jsonwebtoken": "^9.0.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express-rate-limit": "^6.7.0",
+    "@google/generative-ai": "^0.2.0",
+    "zod": "^3.21.4",
+    "helmet": "^7.0.0"
+  },
+  "devDependencies": {}
+}
